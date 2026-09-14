@@ -1,5 +1,6 @@
 package com.c4amila.ProjectManager.domain.entity;
 
+import com.c4amila.ProjectManager.domain.model.StatusProjeto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
