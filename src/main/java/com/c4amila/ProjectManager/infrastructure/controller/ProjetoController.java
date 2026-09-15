@@ -4,6 +4,7 @@ import com.c4amila.ProjectManager.domain.entity.Projeto;
 import com.c4amila.ProjectManager.domain.service.ProjetoService;
 import com.c4amila.ProjectManager.infrastructure.dto.ProjetoResponseDTO;
 import com.c4amila.ProjectManager.infrastructure.dto.SalvarProjetoDTO;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,7 +24,7 @@ public class ProjetoController {
     private final ProjetoService projetoService;
 
     @PostMapping("/criar-projeto")
-    public ResponseEntity<ProjetoResponseDTO> criarProjeto(@RequestBody SalvarProjetoDTO salvarProjetoDTO){
+    public ResponseEntity<ProjetoResponseDTO> criarProjeto(@RequestBody @Valid SalvarProjetoDTO salvarProjetoDTO){
         Projeto projeto = projetoService.criarProjeto(salvarProjetoDTO);
         return ResponseEntity.created(URI.create(PATH_PROJETOS + "/" + projeto.getId()))
                 .body(ProjetoResponseDTO.criar(projeto));
