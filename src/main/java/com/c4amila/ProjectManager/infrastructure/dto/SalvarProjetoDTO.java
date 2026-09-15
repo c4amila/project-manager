@@ -6,7 +6,7 @@ import lombok.Data;
 import java.time.LocalDate;
 
 @Data
-public class ProjetoDTO {
+public class SalvarProjetoDTO {
     private final String nome;
     private final String descricao;
     private final StatusProjeto status;
