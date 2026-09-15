@@ -1,7 +1,10 @@
 server:
   servlet:
     context-path: /
+  port: 8080
 spring:
+  jackson:
+    default-property-inclusion: non_null
   application:
     name: ProjectManager
   datasource:
